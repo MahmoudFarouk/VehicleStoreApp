@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="text-center">
+    <img class="d-block mx-auto mb-4" src="https://cdn2.iconfinder.com/data/icons/car-14/100/Add_Car-512.png" alt=""
+         width="72" height="72">
+    <h2>Vehicle Monitoring</h2>
+  </div>
+
+  <div class="container-fluid">
+    <h4 class="mb-3">Filter Vehicles</h4>
+    <form #vehiclesStatusForm="ngForm" novalidate="">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="drpCustomers">Customers</label>
+          <select class="custom-select d-block w-100" id="drpCustomers" name="drpCustomers" [(ngModel)]="selectedCustomer">
+            <option value="" selected disabled>Select Customer</option>
+            <option *ngFor="let customer of customers" [value]="customer.id">
+              {{customer.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Vehicle Status</label>
+          <div class="custom-control custom-radio">
+            <input id="rpConnected" name="VehcileStatus" type="radio" [(ngModel)]="isConnected"
+                   class="custom-control-input" [value]="true">
+            <label class="custom-control-label" for="rpConnected">Connected</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="rpDisconnected" name="VehcileStatus" type="radio" [(ngModel)]="isConnected"
+                   class="custom-control-input" [value]="false">
+            <label class="custom-control-label" for="rpDisconnected">Disconnected</label>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="mb-3">Vehciles Log</h4>
+      <div style='overflow:scroll;  height:550px; align-content:center;' id="vehicleslog">
+        <div>
+          <div *ngFor="let vehicle of vehicles">
+            <div class="alert alert-success" role="alert"
+                 *ngIf="(isConnected===undefined || isConnected===true) && vehicle.isConnected && (selectedCustomer===undefined || selectedCustomer == vehicle.customerId)">
+              <span>Vehicle with VIN: ({{vehicle.vin}}) & RegNo: ({{vehicle.regNo}}) Owned by: {{vehicle.customer.vin}} at Address ({{vehicle.customer.address}}) become Connected at {{vehicle.date| date:'hh:mm'}}</span>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                 *ngIf="(isConnected===undefined || isConnected===false) && !vehicle.isConnected && (selectedCustomer===undefined || selectedCustomer == vehicle.customerId)">
+              <span>Vehicle with VIN: ({{vehicle.vin}}) & RegNo: ({{vehicle.regNo}}) Owned by: ({{vehicle.customer.name}}) at Address ({{vehicle.customer.address}}) become Disconnected at {{vehicle.date| date:'hh:mm'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" (click)="resetForm();">Reset</button>
+    </form>
+  </div>
+</div>
