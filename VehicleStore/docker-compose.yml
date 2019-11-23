@@ -3,19 +3,7 @@ version: '3.4'
 services:
   vehiclestore:
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
     ports:
      - "80:80"
-    depends_on:
-     - db
-
-  db:
-    ports:
-     - "1433:1433"
-    image: "mcr.microsoft.com/mssql/server"
-    environment:
-     SA_PASSWORD: "P@ssw0rd"
-     ACCEPT_EULA: "Y"
-
-     version: '3.4'

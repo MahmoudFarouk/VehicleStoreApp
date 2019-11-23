@@ -24,6 +24,7 @@ COPY --from=build /app/out ./
 ENTRYPOINT ["dotnet", "VehicleStore.dll"]
 
 
+#TODO:YML with SQL Server Image (worked locally but failed on azure and aws)
 #services:
   #web:
     #build:
