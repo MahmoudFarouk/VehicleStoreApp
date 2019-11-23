@@ -11,7 +11,6 @@ using VehicleStore.Interfaces;
 using VehicleStore.Services;
 using Newtonsoft.Json;
 using VehicleStore.Common;
-using VehicleStore.Models;
 
 namespace VehicleStore
 {
@@ -29,6 +28,8 @@ namespace VehicleStore
         {
             services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
+
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -36,10 +37,8 @@ namespace VehicleStore
             });
 
             AppSettings.ConnectionString = Configuration.GetConnectionString("VSConnection");
-
             DatabaseMigrator.StartMigration();
-
-            services.AddDbContext<VSDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("VSConnection")));
+            services.AddDbContext<VSDBContext>(options => options.UseSqlServer(AppSettings.ConnectionString));
 
             services.AddScoped<IVehicleService, VehicleService>();
             services.AddScoped<ICustomerService, CustomerService>();

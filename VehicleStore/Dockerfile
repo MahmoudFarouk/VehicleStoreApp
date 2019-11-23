@@ -22,3 +22,22 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS base
 WORKDIR /app
 COPY --from=build /app/out ./
 ENTRYPOINT ["dotnet", "VehicleStore.dll"]
+
+
+#services:
+  #web:
+    #build:
+      #context: .
+    #image: "vehiclestoreappprojectacr.azurecr.io/vehiclestoreappproject"
+    #ports:
+     #- "80:80"
+    #depends_on:
+     #- db
+#
+  #db:
+    #ports:
+     #- "1433:1433"
+    #image: "mcr.microsoft.com/mssql/server"
+    #environment:
+     #SA_PASSWORD: "P@ssw0rd"
+     #ACCEPT_EULA: "Y"

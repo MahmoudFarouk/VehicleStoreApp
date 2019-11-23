@@ -10,6 +10,7 @@ namespace VehicleStore.Models
             Vehicles = new HashSet<Vehicle>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Column(TypeName = "nvarchar(128)")]

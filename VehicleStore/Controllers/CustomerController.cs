@@ -35,7 +35,7 @@ namespace VehicleStore.Controllers
         }
 
         [HttpGet]
-        [Route("getcustomervehicles")]
+        [Route("getcustomervehicles/{customerId}")]
         public ServiceResponse<List<Vehicle>> GetCustomerVehicles(int customerId)
         {
             return _customerService.GetCustomerVehicles(customerId);

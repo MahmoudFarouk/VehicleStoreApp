@@ -22,6 +22,7 @@ namespace VehicleStore.Models
                                                         {
                                                             new Customer
                                                             {
+                                                                Id=1,
                                                                 Name = "Kalles Grustransporter AB", Address="Cementvägen 8, 111 11 Södertälje",
                                                                 Vehicles = new List<Vehicle>
                                                                 {
@@ -32,6 +33,7 @@ namespace VehicleStore.Models
                                                             },
                                                             new Customer
                                                             {
+                                                                Id=2,
                                                                 Name = "Johans Bulk AB", Address="Balkvägen 12, 222 22 Stockholm ",
                                                                 Vehicles = new List<Vehicle>
                                                                 {
@@ -41,6 +43,7 @@ namespace VehicleStore.Models
                                                             },
                                                             new Customer
                                                             {
+                                                                Id= 3,
                                                                 Name = "Haralds Värdetransporter AB", Address="Budgetvägen 1, 333 33 Uppsala",
                                                                 Vehicles = new List<Vehicle>
                                                                 {

@@ -17,3 +17,5 @@ services:
     environment:
      SA_PASSWORD: "P@ssw0rd"
      ACCEPT_EULA: "Y"
+
+     version: '3.4'

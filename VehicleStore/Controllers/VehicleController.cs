@@ -43,7 +43,7 @@ namespace VehicleStore.Controllers
         }
 
         [HttpGet]
-        [Route("GetVehiclesByStatus")]
+        [Route("getvehiclesbystatus/{status}")]
         public ServiceResponse<List<Vehicle>> GetVehiclesByStatus(bool status)
         {
             return _vehicleService.GetVehiclesByStatus(status);

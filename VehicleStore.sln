@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleStore", "VehicleStor
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "VehicleStore\docker-compose.dcproj", "{31260870-E899-4216-A5D7-41E1EB5DD198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleStoreTest", "VehicleStoreTest\VehicleStoreTest.csproj", "{D2F90107-6C6E-4BDA-A5EF-B04E6223DD89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleStoreIntegrationAndUnitTests", "VehicleStoreIntegrationTests\VehicleStoreIntegrationAndUnitTests.csproj", "{38EA6E5D-AC63-4DE6-BAEB-F6184CB694D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{31260870-E899-4216-A5D7-41E1EB5DD198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31260870-E899-4216-A5D7-41E1EB5DD198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31260870-E899-4216-A5D7-41E1EB5DD198}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2F90107-6C6E-4BDA-A5EF-B04E6223DD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2F90107-6C6E-4BDA-A5EF-B04E6223DD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2F90107-6C6E-4BDA-A5EF-B04E6223DD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2F90107-6C6E-4BDA-A5EF-B04E6223DD89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EA6E5D-AC63-4DE6-BAEB-F6184CB694D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EA6E5D-AC63-4DE6-BAEB-F6184CB694D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EA6E5D-AC63-4DE6-BAEB-F6184CB694D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EA6E5D-AC63-4DE6-BAEB-F6184CB694D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using VehicleStore.Common;
 using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace VehicleStore.Services
 {
@@ -31,7 +32,7 @@ namespace VehicleStore.Services
                 response.Message = ex.Message;
                 response.Status = ResponseStatus.ServerError;
 
-               ex.LogException();
+                ex.LogException();
             }
 
             return response;
@@ -44,7 +45,10 @@ namespace VehicleStore.Services
 
             try
             {
-                response.Data = _context.Customers.Find(customerId).Vehicles.ToList();
+                var x = _context.Customers.ToList();
+                var y = _context.Customers.Find(1);
+
+                response.Data = _context.Customers.Include(c => c.Vehicles).AsNoTracking().FirstOrDefault(c => c.Id == customerId).Vehicles.ToList();
                 response.Status = ResponseStatus.Success;
             }
             catch (Exception ex)
